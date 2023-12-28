@@ -162,6 +162,30 @@ pre > code {
   }
 }
 
+.button-container {
+  text-align: center; /* Centraliza os botões horizontalmente, opcional */
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #c8a2f0;
+  color: #310552;
+  border: none;
+  border-radius: 5px;
+}
+
+
+
+.button:hover {
+  background-color: #c397f2;
+}
+
 /**
  * Clearfix
  */
