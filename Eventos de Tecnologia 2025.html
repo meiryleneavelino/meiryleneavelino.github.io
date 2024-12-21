@@ -26,6 +26,37 @@
                 color: #0056b3; /* Darker blue when hovered */
                 text-decoration: underline; /* Underline on hover */
             }
+
+            /* Table Styling */
+            .table-custom {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+                font-size: 16px;
+            }
+            .table-custom th, .table-custom td {
+                padding: 12px;
+                text-align: left;
+                border: 1px solid #ddd;
+            }
+            .table-custom th {
+                background-color: #007bff;
+                color: white;
+                font-weight: bold;
+            }
+            .table-custom td {
+                background-color: #f9f9f9;
+            }
+            .table-custom tr:hover {
+                background-color: #f1f1f1;
+            }
+            .table-custom a {
+                color: #007bff;
+                text-decoration: none;
+            }
+            .table-custom a:hover {
+                text-decoration: underline;
+            }
         </style>
     </head>
     <body class="d-flex flex-column">
@@ -52,32 +83,60 @@
             <!-- Page content-->
             <section class="py-5">
                 <div class="container px-5">
-                    <!-- Consultoria Section -->
+                    <!-- Table of Events -->
                     <div class="bg-light rounded-4 py-5 px-4 px-md-5 mb-5">
-                        <h2 class="fw-bold text-primary">Consultoria em Tecnologia e Segurança da Informação</h2>
+                        <h2 class="fw-bold text-primary">Eventos de Tecnologia</h2>
                         <p class="lead fw-normal text-muted">
-                            Está buscando maneiras de tornar seus processos mais eficientes e seguros? A consultoria em tecnologia e segurança da informação pode ajudar você a identificar riscos, proteger seus dados e implementar soluções estratégicas que impulsionam seu negócio.
+                            Aqui estão alguns eventos de tecnologia imperdíveis. Clique nos links para saber mais detalhes sobre cada evento!
                         </p>
-                        <ul>
-                            <li><strong>Proteção de dados sensíveis:</strong> Avalie e melhore a segurança da sua empresa.</li>
-                            <li><strong>Estratégias tecnológicas:</strong> Planejamento para uso eficaz de ferramentas tecnológicas.</li>
-                            <li><strong>Treinamentos:</strong> Capacite sua equipe para evitar riscos cibernéticos.</li>
-                        </ul>
-                        <p class="text-muted"><a class="nav-link" href="https://forms.gle/YJMxJ4nHt5B42RAf7">Entre em contato e descubra como proteger seu negócio enquanto otimiza sua operação!</a></p>
-                    </div>
-
-                    <!-- Desenvolvimento de Software Section -->
-                    <div class="bg-light rounded-4 py-5 px-4 px-md-5">
-                        <h1 class="fw-bolder text-primary">Desenvolvimento de Software Sob Medida</h1>
-                        <p class="lead fw-normal text-muted">
-                            Transforme suas ideias em soluções digitais! Oferecemos serviços de desenvolvimento de software adaptados às suas necessidades, mesmo que você não tenha experiência técnica.
-                        </p>
-                        <ul>
-                            <li><strong>Soluções personalizadas:</strong> Desenvolvimento de sistemas e aplicativos exclusivos para seu negócio.</li>
-                            <li><strong>Automação de processos:</strong> Reduza tarefas manuais e aumente a eficiência.</li>
-                            <li><strong>Integração tecnológica:</strong> Conecte ferramentas e sistemas para melhorar sua operação.</li>
-                        </ul>
-                        <p class="text-muted">Vamos transformar sua ideia em realidade? <strong><a class="nav-link" href="https://forms.gle/U23HddJwBBQqb4kAA">Entre em contato</a></strong> e veja como podemos ajudar!</p>
+                        <table class="table-custom">
+                            <thead>
+                                <tr>
+                                    <th>Nome do Evento</th>
+                                    <th>Data</th>
+                                    <th>Local</th>
+                                    <th>Link</th>
+                                    <th>Descrição</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>TechCrunch Disrupt</td>
+                                    <td>Outubro 2024</td>
+                                    <td>San Francisco, CA</td>
+                                    <td><a href="https://techcrunch.com/disrupt" target="_blank">Visitar</a></td>
+                                    <td>Evento anual de tecnologia, com foco em startups e inovação.</td>
+                                </tr>
+                                <tr>
+                                    <td>Web Summit</td>
+                                    <td>Novembro 2024</td>
+                                    <td>Lisboa, Portugal</td>
+                                    <td><a href="https://websummit.com" target="_blank">Visitar</a></td>
+                                    <td>Uma das maiores conferências de tecnologia do mundo, com líderes de TI.</td>
+                                </tr>
+                                <tr>
+                                    <td>Google I/O</td>
+                                    <td>Maio 2024</td>
+                                    <td>Mountain View, CA</td>
+                                    <td><a href="https://events.google.com/io" target="_blank">Visitar</a></td>
+                                    <td>Conferência de desenvolvedores focada em inovações do Google.</td>
+                                </tr>
+                                <tr>
+                                    <td>CES - Consumer Electronics Show</td>
+                                    <td>Janeiro 2025</td>
+                                    <td>Las Vegas, NV</td>
+                                    <td><a href="https://www.ces.tech" target="_blank">Visitar</a></td>
+                                    <td>Exposição de novos produtos e inovações tecnológicas para consumidores.</td>
+                                </tr>
+                                <tr>
+                                    <td>Microsoft Ignite</td>
+                                    <td>Novembro 2024</td>
+                                    <td>Online</td>
+                                    <td><a href="https://ignite.microsoft.com" target="_blank">Visitar</a></td>
+                                    <td>Conferência global sobre as últimas inovações da Microsoft e soluções corporativas.</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </section>
