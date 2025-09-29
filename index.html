@@ -1,236 +1,380 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content />
-        <meta name="author" content />
-        <title>Meirylene Avelino</title>
-        <!-- Favicon-->
+        <meta name="description" content="Portfólio profissional de Meirylene Avelino, doutoranda em Ciência da Computação, DevSecOps e especialista em Segurança da Informação." />
+        <meta name="author" content="MaCyberTech" />
+        <title>MaCyberTech</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Custom Google font-->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <style>
-            /* Custom styling to make links appear more visible */
-            .nav-link {
-                text-decoration: none; /* Remove underline */
-                color: #007bff; /* Blue color for links */
+            :root {
+                --primary-color: #007bff; /* Azul original, mas podemos usar um gradiente */
+                --secondary-color: #6c757d; /* Cinza */
+                --dark-bg: #1a1a2e; /* Fundo escuro */
+                --card-bg: #2a2a4a; /* Fundo dos cards */
+                --text-light: #f0f0f0; /* Texto claro */
+                --accent-gradient: linear-gradient(45deg, #8a2be2, #007bff); /* Gradiente roxo-azul */
+                --neon-effect: 0 0 8px rgba(138, 43, 226, 0.7), 0 0 15px rgba(0, 123, 255, 0.7);
             }
+
+            body {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                background-color: var(--dark-bg);
+                color: var(--text-light);
+            }
+
+            .navbar {
+                background-color: var(--dark-bg) !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .navbar-brand .fw-bolder {
+                background: var(--accent-gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 1.5rem;
+                letter-spacing: 0.5px;
+            }
+
+            .nav-link {
+                color: var(--text-light) !important;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
+
             .nav-link:hover {
-                color: #0056b3; /* Darker blue when hovered */
-                text-decoration: underline; /* Underline on hover */
+                color: #8a2be2 !important; /* Cor mais vibrante no hover */
+                text-shadow: var(--neon-effect);
+            }
+            .nav-link.active {
+                color: #007bff !important;
+                text-shadow: var(--neon-effect);
+            }
+
+            .header-content {
+                display: flex;
+                align-items: center;
+                gap: 3rem; /* Espaçamento entre texto e imagem */
+            }
+
+            .header-text {
+                flex: 1;
+            }
+
+            /* AJUSTE: Permite mais espaço para a imagem (maior que 400px) */
+            .header-picture {
+                flex: 0 0 500px; 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+            }
+            
+            /* AJUSTE PRINCIPAL DE TAMANHO: Altere width e height aqui para controlar o tamanho */
+            .profile {
+                /* TAMANHO DO HEXÁGONO: Aumentado para 400px x 400px */
+                width: 400px; 
+                height: 400px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden; 
+                position: relative;
+                background: var(--accent-gradient); 
+                padding: 5px; 
+                
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                border-radius: 0; 
+                animation: rotateBorder 8s linear infinite; 
+            }
+
+            .profile-img {
+             width: 100%;
+             height: 100%;
+             /* Confia no object-fit para preencher o espaço */
+             object-fit: contain; 
+             display: block;
+             position: relative;
+             z-index: 1;
+             object-position: center bottom; 
+            
+    
+            /* Removemos o clip-path e o transform daqui */
+            transform: none;
+            }
+
+            @keyframes rotateBorder {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+
+            .text-gradient {
+                background: var(--accent-gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            h1.display-5 {
+                font-size: 3.5rem;
+                font-weight: 700;
+                line-height: 1.2;
+            }
+
+            .lead.text-muted {
+                font-size: 1.15rem;
+                line-height: 1.8;
+                color: #ccc !important;
+            }
+
+            .social-icons a {
+                color: var(--text-light);
+                font-size: 2.5rem;
+                margin: 0 0.75rem;
+                transition: color 0.3s ease, transform 0.3s ease;
+            }
+
+            .social-icons a:hover {
+                color: #8a2be2;
+                transform: translateY(-5px);
+                text-shadow: var(--neon-effect);
+            }
+
+            /* Estilos para a nova Seção de Destaques */
+            .action-card {
+                display: block;
+                padding: 2rem;
+                border-radius: 0.75rem;
+                background-color: var(--card-bg); /* Fundo escuro do card */
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                height: 100%;
+                text-align: center; /* Centraliza conteúdo dentro do card */
+            }
+
+            .action-card:hover {
+                transform: translateY(-8px); /* Efeito de elevação ao passar o mouse */
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), var(--neon-effect); /* Sombra mais intensa + efeito neon */
+            }
+
+            .action-card .h4 {
+                color: var(--text-light) !important;
+            }
+
+            .action-card p {
+                color: #a0a0a0 !important; /* Cor mais clara para o parágrafo */
+            }
+
+            /* Garante que o ícone tenha o gradiente de fundo e seja centralizado */
+            .feature {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                height: 3.5rem;
+                width: 3.5rem;
+                font-size: 1.75rem;
+                margin-bottom: 1.5rem;
+            }
+            .bg-gradient-primary-to-secondary {
+                /* Reutiliza o gradiente que já está no seu CSS */
+                background: linear-gradient(135deg, #8a2be2 0%, #007bff 100%) !important;
+            }
+            /* Fim dos estilos para Destaques */
+            
+            /* Seção de Citação */
+            .quote-section {
+                background: var(--card-bg);
+                border-radius: 15px;
+                padding: 3rem;
+                /* margin-top: 4rem; REMOVIDO PARA ENCAIXAR MELHOR APÓS OS CARDS */
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .quote-section h6 {
+                color: var(--text-light);
+                font-style: italic;
+                font-size: 1.5rem;
+                line-height: 1.6;
+            }
+            .quote-section h6 span {
+                font-style: normal;
+                display: block;
+                margin-top: 1rem;
+                font-size: 1.2rem;
+                color: #bbb;
+            }
+
+            .footer {
+                background-color: var(--dark-bg) !important;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                color: var(--text-light);
+            }
+            .footer .small {
+                color: #aaa;
+            }
+            .footer .social-icons-footer a {
+                color: #aaa;
+                font-size: 1.5rem;
+                margin-left: 1rem;
+            }
+            .footer .social-icons-footer a:hover {
+                 color: #8a2be2;
+                 text-shadow: 0 0 5px rgba(138, 43, 226, 0.5);
+            }
+
+            /* Animação de fundo (opcional, pode ser um SVG ou um padrão CSS) */
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"></path></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)" /></svg>') no-repeat center center fixed;
+                background-size: cover;
+                opacity: 0.1; /* Transparência para não roubar o foco */
+                z-index: -1;
+            }
+
+            /* Removendo os dots SVGs antigos */
+            .profile .dots-1, .profile .dots-2, .profile .dots-3, .profile .dots-4 {
+                display: none;
+            }
+
+            /* Efeitos de gradiente para texto principal */
+            .header-text h1 .text-gradient {
+                font-size: 4.5rem; /* Ajuste para um visual mais impactante */
+            }
+
+            /* Melhorias para a bio */
+            .bio-text p {
+                font-size: 1.1rem;
+                line-height: 1.7;
+                margin-bottom: 1.5rem;
+                color: #d0d0d0;
+            }
+            .bio-text strong {
+                color: #8a2be2; /* Cor de destaque para termos importantes */
+                text-shadow: 0 0 5px rgba(138, 43, 226, 0.3);
             }
         </style>
     </head>
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <nav class="navbar navbar-expand-lg navbar-dark py-3">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Meirylene Avelino</span></a>
+                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Meirylene Avelino CyberTech</span></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="docencia.html">Docência</a></li>
-                            <li class="nav-item"><a class="nav-link" href="mentoria.html">Mentoria</a></li>
-                            <li class="nav-item"><a class="nav-link" href="consultoriadev.html">Consultoria e Dev</a></li>
-                            <li class="nav-item"><a class="nav-link" href="experiencia.html">Experiência</a></li>
-                            <li class="nav-item"><a class="nav-link" href="pe.html">Palestras e Eventos</a></li>
+                        
+                            <li class="nav-item"><a class="nav-link" href="experiencia.html">Experiências Profissionais</a></li>
+                            <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços Ofertados</a></li>
                             <li class="nav-item"><a class="nav-link" href="publicacoes.html">Publicações</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contatos.html">Contatos</a></li>
-                            <li class="nav-item"><a class="nav-link" href="Eventos de Tecnologia 2025.html">Eventos de Tecnologia 2025</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
-            <!-- Header-->
             <header class="py-5">
                 <div class="container px-5 pb-5">
-                    <div class="row gx-5 align-items-center">
-                        <div class="col-xxl-5">
-                            <!-- Header text content-->
-                            
-
-                                <div class="text-center my-5">
-                                    <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Short Bio</span></h2>
-                                    
-                                    <p class="text-muted">
-                                        Meirylene Avelino é doutoranda em Ciência da Computação pela Universidade Federal Fluminense (UFF), com linha de pesquisa focada em <strong>Inteligência Artificial no Combate à Pirataria de Conteúdo</strong>. Com uma trajetória acadêmica sólida, ela possui graduação em Ciência da Computação (2017) e mestrado (2021) pela UFF, com ênfase na garantia de autenticidade de conteúdos web utilizando <strong>Blockchain</strong>. Também é MBA em Gestão Estratégica de Negócios pela mesma instituição.
-                        <br><br>
-                        Atualmente, Meirylene atua como <strong>DevSecOps</strong>, integrando práticas de segurança ao ciclo de vida do desenvolvimento de software, sendo especialista em diversas áreas da <strong>Segurança da Informação</strong>. Ao longo de sua carreira, passou por praticamente todas as vertentes dessa área, com destaque para a gestão de acessos privilegiados (IAM), implantação de soluções de <strong>PAM</strong> e <strong>Cybersecurity Awareness</strong>.
-                        <br><br>
-                        Sua experiência acadêmica inclui a atuação como <strong>professora substituta</strong> no Departamento de Ciências Atuariais e Finanças da UFF em 2024, além de ser uma <strong>palestrante</strong> requisitada em eventos de tecnologia e segurança. Ela também se dedica a projetos voluntários voltados para a diversidade de gênero nas carreiras <strong>STEM</strong> (Ciência, Tecnologia, Engenharia e Matemática).
-                        <br><br>
-                        Meirylene é <strong>cocriadora e idealizadora</strong> da <strong>GloboSec Week e do MA CyberTech</strong>, um programa que integra academia e empresa para conscientizar e ensinar sobre segurança da informação, além de descobrir novos talentos para a área de <strong>Cybersecurity</strong> da Globo. Seu trabalho foi reconhecido com o <strong>XIV Prêmio Josué de Castro de Extensão</strong>, conferido pela UFF, durante a <strong>21ª Semana de Extensão da Universidade</strong>.
-                        <br><br>
-                        Além disso, foi indicada para o <strong>Woman that Build Awards</strong> da <strong>Globant</strong> em 2022 e reconhecida como uma das <strong>Top 20 mulheres mais influentes em tecnologia</strong>.
-                                         
-                                      
-
-                                    </p>
-                                   
-
-
-
-                                   
+                    <div class="row gx-5 align-items-center header-content">
+                        <div class="col-xxl-7 header-text">
+                            <div class="text-center text-xxl-start my-5">
+                                <h1 class="display-5 fw-bolder mb-3">
+                                    <span class="text-gradient d-inline">MaCyberTech</span>
+                                </h1>
+                                <p class="lead fw-light mb-4">Palestrant | Mentora de Carreira | Consultoria em Tecnologia | Desenvolvimento de Produtos Tecnológicos | Cibersegurança</p>
+                                <div class="d-flex justify-content-center justify-content-xxl-start gap-4 social-icons">
+                                    <a class="text-gradient" href="https://www.linkedin.com/in/meiryleneavelino/"><i class="bi bi-linkedin"></i></a>
+                                    <a class="text-gradient" href="https://www.instagram.com/meiryleneavelinocybertech/"><i class="bi bi-instagram"></i></a>
+                                    <a class="text-gradient" href="https://linktr.ee/meiryleneavelinocybertech"><i class="bi bi-link"></i></a>
+                                    </div>
                             </div>
                         </div>
-                        <div class="col-xxl-7">
-                            <!-- Header profile picture-->
-                            <div class="d-flex justify-content-center mt-5 mt-xxl-0">
-                                <div class="profile bg-gradient-primary-to-secondary">
-                                    <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
-                                    <!-- Watch a tutorial on how to do this on YouTube (link)-->
-                                    <img class="profile-img" src="assets/img/1.png" alt="..." />
-                                    <div class="dots-1">
-                                        <!-- SVG Dots-->
-                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
-                                            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                                <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
-                                                <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
-                                                <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
-                                                <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
-                                                <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
-                                                <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
-                                                <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
-                                                <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
-                                                <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
-                                                <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
-                                                <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
-                                                <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
-                                                <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
-                                                <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
-                                                <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
-                                                <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
-                                                <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
-                                                <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
-                                                <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
-                                                <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
-                                            </g>
-                                        </svg>
-                                        <!-- END of SVG dots-->
-                                    </div>
-                                    <div class="dots-2">
-                                        <!-- SVG Dots-->
-                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
-                                            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                                <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
-                                                <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
-                                                <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
-                                                <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
-                                                <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
-                                                <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
-                                                <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
-                                                <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
-                                                <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
-                                                <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
-                                                <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
-                                                <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
-                                                <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
-                                                <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
-                                                <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
-                                                <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
-                                                <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
-                                                <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
-                                                <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
-                                                <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
-                                            </g>
-                                        </svg>
-                                        <!-- END of SVG dots-->
-                                    </div>
-                                    <div class="dots-3">
-                                        <!-- SVG Dots-->
-                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
-                                            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                                <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
-                                                <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
-                                                <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
-                                                <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
-                                                <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
-                                                <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
-                                                <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
-                                                <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
-                                                <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
-                                                <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
-                                                <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
-                                                <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
-                                                <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
-                                                <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
-                                                <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
-                                                <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
-                                                <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
-                                                <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
-                                                <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
-                                                <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
-                                            </g>
-                                        </svg>
-                                        <!-- END of SVG dots-->
-                                    </div>
-                                    <div class="dots-4">
-                                        <!-- SVG Dots-->
-                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
-                                            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                                <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
-                                                <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
-                                                <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
-                                                <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
-                                                <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
-                                                <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
-                                                <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
-                                                <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
-                                                <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
-                                                <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
-                                                <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
-                                                <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
-                                                <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
-                                                <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
-                                                <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
-                                                <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
-                                                <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
-                                                <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
-                                                <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
-                                                <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
-                                            </g>
-                                        </svg>
-                                        <!-- END of SVG dots-->
-                                    </div>
-                                </div>
+                        <div class="col-xxl-5 header-picture">
+                            <div class="profile hexagon">
+                                <img class="profile-img" src="assets/img/1.png" alt="Meirylene Avelino" />
                             </div>
                         </div>
                     </div>
                 </div>
             </header>
-            <!-- About Section-->
-            <section class="bg-light py-5">
+
+            <section id="highlights" class="py-5">
                 <div class="container px-5">
                     <div class="row gx-5 justify-content-center">
                         <div class="col-xxl-8">
-                            <div class="text-xxl-start">
-                                <h6 class="display-6 fw-bolder mb-4"><span class="text-gradient d-inline">"O conhecimento é a única coisa que ninguém tira de você!" (Paulo Coelho)</span></h6>
+                            <div class="text-center mb-5">
+                                <h2 class="display-5 fw-bolder mb-5"><span class="text-gradient d-inline">Conheça mais sobre o meu trabalho</span></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row gx-5 justify-content-center">
+                        
+                        <div class="col-lg-4 mb-4">
+                            <a href="experiencia.html" class="action-card text-decoration-none">
+                                <div class="feature bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-person-workspace"></i></div>
+                                <h4 class="h3 fw-bolder text-light">Experiências Profissionais</h4>
+                                <p class="text-light-subtle">Confira minha trajetória profissional,reconhecimentos e prêmios e a lista completa de palestras e cursos ministrados.</p>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 mb-4">
+                            <a href="servicos.html" class="action-card text-decoration-none">
+                                <div class="feature bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-gear-wide-connected"></i></div>
+                                <h4 class="h3 fw-bolder text-light">Serviços Ofertados</h4>
+                                <p class="text-light-subtle">Consultoria Estratégica em TI e Segurança, Desenvolvimento de Produtos e Palestras/Mentorias de Carreira personalizadas.</p>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 mb-4">
+                            <a href="publicacoes.html" class="action-card text-decoration-none">
+                                <div class="feature bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-award"></i></div>
+                                <h4 class="h3 fw-bolder text-light">Publicações</h4>
+                                <p class="text-light-subtle">Minhas produções científicas.</p>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section class="py-5">
+                <div class="container px-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-xxl-8"> 
+                            <div class="text-center quote-section">
+                                <h6 class="mb-0">
+                                    "O conhecimento é a única coisa que ninguém tira de você!"
+                                    <span>(Paulo Coelho)</span>
+                                </h6>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-        </main>
-        <!-- Footer-->
-        <footer class="bg-white py-4 mt-auto">
+            </main>
+        <footer class="footer py-4 mt-auto">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div class="col-auto"><div class="small m-0">Copyright &copy; MACT 2023</div></div>
-                   
+                    <div class="col-auto social-icons-footer">
+                        <a class="text-gradient" href="https://www.linkedin.com/in/meiryleneavelino/"><i class="bi bi-linkedin"></i></a>
+                
+                        <a class="text-gradient" href="https://www.instagram.com/meiryleneavelinocybertech/"><i class="bi bi-instagram"></i></a>
+                
+                        <a class="text-gradient" href="https://linktr.ee/meiryleneavelinocybertech"><i class="bi bi-link"></i></a>
+                        </div>
                 </div>
             </div>
         </footer>
-        <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
 </html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Serviços oferecidos por Meirylene Avelino: mentorias em carreiras tech, desenvolvimento de software, palestras e treinamentos corporativos." />
+        <meta name="author" content="MaCyberTech" />
+        <title>Serviços - MaCyberTech</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            /* ESTILOS COPIADOS DIRETAMENTE DA INDEX.HTML E PUBLICACAO.HTML */
+            :root {
+                --primary-color: #007bff;
+                --secondary-color: #6c757d;
+                --dark-bg: #1a1a2e;
+                --card-bg: #2a2a4a;
+                --text-light: #f0f0f0;
+                --accent-gradient: linear-gradient(45deg, #8a2be2, #007bff);
+                --neon-effect: 0 0 8px rgba(138, 43, 226, 0.7), 0 0 15px rgba(0, 123, 255, 0.7);
+            }
+
+            body {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                background-color: var(--dark-bg);
+                color: var(--text-light);
+            }
+
+            .navbar {
+                background-color: var(--dark-bg) !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .navbar-brand .fw-bolder {
+                background: var(--accent-gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 1.5rem;
+                letter-spacing: 0.5px;
+            }
+
+            .nav-link {
+                color: var(--text-light) !important;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
+
+            .nav-link:hover {
+                color: #8a2be2 !important;
+                text-shadow: var(--neon-effect);
+            }
+            /* Destaca o link de serviços nesta página */
+            .nav-link[href="servicos.html"] {
+                color: #007bff !important;
+                text-shadow: var(--neon-effect);
+            }
+
+            .text-gradient {
+                background: var(--accent-gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            /* Estilo do Card de Serviço */
+            .service-card {
+                display: block;
+                padding: 2rem;
+                border-radius: 0.75rem;
+                background-color: var(--dark-bg);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                height: 100%;
+            }
+
+            .service-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), var(--neon-effect);
+            }
+
+            .service-card .icon-feature {
+                font-size: 2.5rem;
+                background: var(--accent-gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 1rem;
+            }
+
+            .service-card h4 {
+                color: var(--text-light) !important;
+                font-weight: 600;
+            }
+
+            .service-card p {
+                color: #a0a0a0 !important;
+                line-height: 1.7;
+            }
+
+            /* Estilos do Modal de Contato */
+            .modal-content {
+                background-color: var(--dark-bg);
+                border: 1px solid #8a2be2;
+                box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+            }
+            .modal-header {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .modal-title {
+                color: var(--text-light);
+            }
+            .form-control {
+                background-color: var(--card-bg);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                color: var(--text-light);
+            }
+            .form-control:focus {
+                background-color: var(--card-bg);
+                border-color: #007bff;
+                box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+                color: var(--text-light);
+            }
+            .btn-primary-gradient {
+                background: var(--accent-gradient);
+                border: none;
+                color: var(--dark-bg);
+                font-weight: bold;
+                transition: opacity 0.3s ease;
+            }
+            .btn-primary-gradient:hover {
+                opacity: 0.9;
+                color: var(--dark-bg);
+            }
+
+
+            /* Estilos de Rodapé/Fundo */
+            .footer {
+                background-color: var(--dark-bg) !important;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                color: var(--text-light);
+            }
+            .footer .small {
+                color: #aaa;
+            }
+            .footer .social-icons-footer a {
+                color: #aaa;
+                font-size: 1.5rem;
+                margin-left: 1rem;
+            }
+            .footer .social-icons-footer a:hover {
+                 color: #8a2be2;
+                 text-shadow: 0 0 5px rgba(138, 43, 226, 0.5);
+            }
+
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"></path></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)" /></svg>') no-repeat center center fixed;
+                background-size: cover;
+                opacity: 0.1;
+                z-index: -1;
+            }
+        </style>
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <nav class="navbar navbar-expand-lg navbar-dark py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Meirylene Avelino CyberTech</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link" href="experiencia.html">Experiências Profissionais</a></li>
+                            <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços Ofertados</a></li>
+                            <li class="nav-item"><a class="nav-link" href="publicacoes.html">Publicações</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <header class="py-5">
+                <div class="container px-5 pb-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-xxl-12">
+                            <div class="text-center my-5">
+                                <h1 class="display-5 fw-bolder mb-3">
+                                    <span class="text-gradient d-inline">Serviços Ofertados</span>
+                                </h1>
+                                <p class="lead fw-light mb-4 text-light">Impulsione sua carreira e projetos com expertise em tecnologia e segurança.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="py-5">
+                <div class="container px-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-12">
+                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+                                <div class="col">
+                                    <div class="service-card text-center">
+                                        <div class="icon-feature"><i class="bi bi-person-workspace"></i></div>
+                                        <h4 class="mb-3">Mentorias em Carreiras CyberTech</h4>
+                                        <p class="text-light-subtle">Orientação personalizada para transição de carreira, crescimento profissional e especialização em Computação e Segurança da Informação.</p>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="service-card text-center">
+                                        <div class="icon-feature"><i class="bi bi-code-slash"></i></div>
+                                        <h4 class="mb-3">Desenvolvimento de Software Seguro</h4>
+                                        <p class="text-light-subtle">Consultoria e desenvolvimento de soluções de software com foco em segurança desde o design (Security by Design).</p>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="service-card text-center">
+                                        <div class="icon-feature"><i class="bi bi-mic"></i></div>
+                                        <h4 class="mb-3">Palestras & Keynotes</h4>
+                                        <p class="text-light-subtle">Conteúdo inspirador e técnico sobre Segurança Cibernética, DevSecOps, Blockchain, Inteligência Artificial, Inclusão e diversidade na Tecnologia, Desenvolvimento de carreira e Motivacional.</p>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="service-card text-center">
+                                        <div class="icon-feature"><i class="bi bi-building"></i></div>
+                                        <h4 class="mb-3">Treinamentos Corporativos</h4>
+                                        <p class="text-light-subtle">Workshops e treinamentos customizados sobre CyberTech.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-5 text-center">
+                <div class="container px-5">
+                    <button type="button" class="btn btn-lg px-5 py-3 fs-6 fw-bolder"
+                            style="background: var(--accent-gradient); color: var(--dark-bg); border: none;"
+                            data-bs-toggle="modal" data-bs-target="#contactModal">
+                        Entre em Contato para Orçamento
+                    </button>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0">Copyright &copy; MACT 2023</div></div>
+                    <div class="col-auto social-icons-footer">
+                        <a class="text-gradient" href="https://www.linkedin.com/in/meiryleneavelino/"><i class="bi bi-linkedin"></i></a>
+                        <a class="text-gradient" href="https://www.instagram.com/meiryleneavelinocybertech/"><i class="bi bi-instagram"></i></a>
+                        <a class="text-gradient" href="https://linktr.ee/meiryleneavelinocybertech"><i class="bi bi-link"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contactModalLabel">Solicite um Orçamento ou Mentoria</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1);"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="contactForm" action="https://formspree.io/f/xzzjedlz" method="POST">
+                            <p class="text-light-subtle small mb-4">Preencha os campos abaixo. Sua mensagem será enviada de forma segura.</p>
+
+                            <div class="mb-3">
+                                <label for="nome" class="form-label small fw-bolder">Seu Nome</label>
+                                <input type="text" class="form-control" id="nome" name="Nome" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label small fw-bolder">Seu Email</label>
+                                <input type="email" class="form-control" id="email" name="_replyto" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="servico" class="form-label small fw-bolder">Serviço de Interesse</label>
+                                <select class="form-select" id="servico" name="Servico_Interesse">
+                                    <option>Mentorias em Carreiras Tech</option>
+                                    <option>Desenvolvimento de Software Seguro</option>
+                                    <option>Palestras & Keynotes</option>
+                                    <option>Treinamentos Corporativos</option>
+                                    <option>Outro/Geral</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="mensagem" class="form-label small fw-bolder">Mensagem (Detalhes do Projeto)</label>
+                                <textarea class="form-control" id="mensagem" name="Mensagem" rows="4" required></textarea>
+                            </div>
+
+                            <div class="d-grid mt-4">
+                                <button type="submit" class="btn btn-lg btn-primary-gradient">
+                                    Enviar Solicitação Agora
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

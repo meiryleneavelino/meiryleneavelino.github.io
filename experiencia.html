@@ -1,383 +1,1105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content />
-        <meta name="author" content />
-        <title>Meirylene Avelino</title>
-        <!-- Favicon-->
+        <meta name="description" content="Portfólio profissional de Meirylene Avelino, doutoranda em Ciência da Computação, DevSecOps e especialista em Segurança da Informação." />
+        <meta name="author" content="MaCyberTech" />
+        <title>Experiência - MaCyberTech</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Custom Google font-->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <style>
-            /* Custom styling to make links appear more visible */
-            .nav-link {
-                text-decoration: none; /* Remove underline */
-                color: #007bff; /* Blue color for links */
+            /* ESTILOS COPIADOS DIRETAMENTE DA INDEX.HTML */
+            :root {
+                --primary-color: #007bff;
+                --secondary-color: #6c757d;
+                --dark-bg: #1a1a2e;
+                --card-bg: #2a2a4a;
+                --text-light: #f0f0f0;
+                --accent-gradient: linear-gradient(45deg, #8a2be2, #007bff);
+                --neon-effect: 0 0 8px rgba(138, 43, 226, 0.7), 0 0 15px rgba(0, 123, 255, 0.7);
             }
+
+            body {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                background-color: var(--dark-bg);
+                color: var(--text-light);
+            }
+
+            .navbar {
+                background-color: var(--dark-bg) !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .navbar-brand .fw-bolder {
+                background: var(--accent-gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 1.5rem;
+                letter-spacing: 0.5px;
+            }
+
+            .nav-link {
+                color: var(--text-light) !important;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
+
             .nav-link:hover {
-                color: #0056b3; /* Darker blue when hovered */
-                text-decoration: underline; /* Underline on hover */
+                color: #8a2be2 !important;
+                text-shadow: var(--neon-effect);
+            }
+            .nav-link.active {
+                color: #007bff !important;
+                text-shadow: var(--neon-effect);
+            }
+
+            .header-content {
+                display: flex;
+                align-items: center;
+                gap: 3rem;
+            }
+
+            .header-text {
+                flex: 1;
+            }
+
+            .header-picture {
+                flex: 0 0 500px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+            }
+            
+            .profile {
+                width: 400px;
+                height: 400px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                background: var(--accent-gradient);
+                padding: 5px;
+                
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                border-radius: 0;
+                animation: rotateBorder 8s linear infinite;
+            }
+
+            .profile-img {
+             width: 100%;
+             height: 100%;
+             object-fit: contain;
+             display: block;
+             position: relative;
+             z-index: 1;
+             object-position: center bottom;
+            
+            transform: none;
+            }
+
+            @keyframes rotateBorder {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+
+            .text-gradient {
+                background: var(--accent-gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            h1.display-5 {
+                font-size: 3.5rem;
+                font-weight: 700;
+                line-height: 1.2;
+            }
+
+            .lead.text-muted {
+                font-size: 1.15rem;
+                line-height: 1.8;
+                color: #ccc !important;
+            }
+
+            .social-icons a {
+                color: var(--text-light);
+                font-size: 2.5rem;
+                margin: 0 0.75rem;
+                transition: color 0.3s ease, transform 0.3s ease;
+            }
+
+            .social-icons a:hover {
+                color: #8a2be2;
+                transform: translateY(-5px);
+                text-shadow: var(--neon-effect);
+            }
+
+            /* Estilos Específicos para Experiência/Timeline */
+            .profile-highlight {
+                width: 250px; 
+                height: 250px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+            }
+            .profile-highlight img {
+                object-fit: cover; 
+                transition: transform 0.3s ease;
+            }
+            .profile-highlight a:hover img {
+                transform: scale(1.05);
+            }
+            
+            /* Melhoria dos cards da Timeline */
+            .card-body a.small {
+                color: #8a2be2 !important; 
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+            .card-body a.small:hover {
+                text-decoration: underline;
+                color: #007bff !important;
+            }
+
+
+            /* Removendo os dots SVGs antigos */
+            .profile .dots-1, .profile .dots-2, .profile .dots-3, .profile .dots-4 {
+                display: none;
+            }
+
+            /* Efeitos de gradiente para texto principal */
+            .header-text h1 .text-gradient {
+                font-size: 4.5rem;
+            }
+            
+            /* O resto dos estilos da index (action-card, quote-section, footer) foram mantidos no final da seção <style> para consistência */
+            .action-card {
+                display: block;
+                padding: 2rem;
+                border-radius: 0.75rem;
+                background-color: var(--card-bg);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                height: 100%;
+                text-align: center;
+            }
+
+            .action-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), var(--neon-effect);
+            }
+
+            .action-card .h4 {
+                color: var(--text-light) !important;
+            }
+
+            .action-card p {
+                color: #a0a0a0 !important;
+            }
+
+            .feature {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                height: 3.5rem;
+                width: 3.5rem;
+                font-size: 1.75rem;
+                margin-bottom: 1.5rem;
+            }
+            .bg-gradient-primary-to-secondary {
+                background: linear-gradient(135deg, #8a2be2 0%, #007bff 100%) !important;
+            }
+            
+            .quote-section {
+                background: var(--card-bg);
+                border-radius: 15px;
+                padding: 3rem;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .quote-section h6 {
+                color: var(--text-light);
+                font-style: italic;
+                font-size: 1.5rem;
+                line-height: 1.6;
+            }
+            .quote-section h6 span {
+                font-style: normal;
+                display: block;
+                margin-top: 1rem;
+                font-size: 1.2rem;
+                color: #bbb;
+            }
+
+            .footer {
+                background-color: var(--dark-bg) !important;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                color: var(--text-light);
+            }
+            .footer .small {
+                color: #aaa;
+            }
+            .footer .social-icons-footer a {
+                color: #aaa;
+                font-size: 1.5rem;
+                margin-left: 1rem;
+            }
+            .footer .social-icons-footer a:hover {
+                 color: #8a2be2;
+                 text-shadow: 0 0 5px rgba(138, 43, 226, 0.5);
+            }
+            
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"></path></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)" /></svg>') no-repeat center center fixed;
+                background-size: cover;
+                opacity: 0.1;
+                z-index: -1;
             }
         </style>
     </head>
-    <body class="d-flex flex-column h-100 bg-light">
+    <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <nav class="navbar navbar-expand-lg navbar-dark py-3">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Meirylene Avelino</span></a>
+                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Meirylene Avelino CyberTech</span></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="docencia.html">Docência</a></li>
-                            <li class="nav-item"><a class="nav-link" href="mentoria.html">Mentoria</a></li>
-                            <li class="nav-item"><a class="nav-link" href="consultoriadev.html">Consultoria e Dev</a></li>
-                            <li class="nav-item"><a class="nav-link" href="experiencia.html">Experiência</a></li>
-                            <li class="nav-item"><a class="nav-link" href="pe.html">Palestras e Eventos</a></li>
+                        
+                            <li class="nav-item"><a class="nav-link" href="experiencia.html">Experiências Profissionais</a></li>
+                            <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços Ofertados</a></li>
                             <li class="nav-item"><a class="nav-link" href="publicacoes.html">Publicações</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contatos.html">Contatos</a></li>
-                            <li class="nav-item"><a class="nav-link" href="Eventos de Tecnologia 2025.html">Eventos de Tecnologia 2025</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
-            <!-- Page Content-->
-            <div class="container px-5 my-5">
-                <div class="text-center mb-5">
-                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Experiências Profissionais</span></h1>
-                </div>
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-11 col-xl-9 col-xxl-8">
-
-   <!-- Experience Section-->
-   <section>
-    <!-- Experience Card -->
-    <div class="card shadow border-0 rounded-4 mb-5">
-        <div class="card-body p-5">
-            <div class="row align-items-center gx-5">
-                <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                    <div class="bg-light p-4 rounded-4">
-                        <div class="text-primary fw-bolder mb-2">2023 - Dias atuais</div>
-                        <div class="small fw-bolder">Analista de Segurança da Informação Sênior</div>
-                        <div class="small text-muted">Globo</div>
-                        <div class="small text-muted">Rio de Janeiro, Brasil</div>
+            
+            <header class="py-5">
+                <div class="container px-5 pb-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-xxl-12">
+                            <div class="text-center my-5">
+                                <h1 class="display-5 fw-bolder mb-3">
+                                    <span class="text-gradient d-inline">Experiência Profissionais</span>
+                                </h1>
+                                <p class="lead fw-light mb-4 text-light">Confira minha trajetória profissional,reconhecimentos e prêmios e a lista completa de palestras e cursos ministrados.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-8"><div>
-                    <ul>
-                        <li>Dias atuais </li>
-                        
-                        
-                      </ul>
-                
-                </div></div>
+            </header>
+
+            <section class="py-5">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center justify-content-center">
+
+                    
+
+        
+                    
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h2 class="display-6 fw-bolder mb-3"><span class="text-gradient d-inline">Reconhecimentos e Prêmios</span></h2>
+                        <p class="text-light-subtle">
+                            Durante uma palestra em Criciúma, participei de uma entrevista em um programa de Televisão local.
+                        </p>
+                        <a class="btn btn-lg fw-bolder" 
+                        href="https://globoplay.globo.com/v/12957253/?s=0s" 
+                        target="_blank" 
+                        style="background: var(--accent-gradient); border: none; color: #fff;">
+                        Ver Mais Detalhes <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 text-center">
+                        <a href="https://globoplay.globo.com/v/12957253/?s=0s" target="_blank" style="text-decoration: none;">
+                            
+                            <div class="profile-highlight mx-auto" style="width: 1px; height: 1px;"></div>    
+                                <img class="img-fluid" src="assets/img/tv.png" alt="Reconhecimento Apareci na TV" style="border-radius: 0.5rem; border: 3px solid #8a2be2;">
+                            </div>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center justify-content-center">
+                    
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h2 class="display-6 fw-bolder mb-3"><span class="text-gradient d-inline"></span></h2>
+                        <p class="text-light-subtle">
+                            Fui eleita como uma das Top 20 mulheres mais influentes em tecnologia em 2022, um destaque de carreira que celebra a liderança feminina em STEM e Cybersecurity.
+                        </p>
+                        <a class="btn btn-lg fw-bolder" 
+                        href="https://www.linkedin.com/posts/meiryleneavelino_daryus-idesp-continuidadedenegocios-activity-7042587379148177408-d-E1?utm_source=share&utm_medium=member_desktop" 
+                        target="_blank" 
+                        style="background: var(--accent-gradient); border: none; color: #fff;">
+                        Ver Mais Detalhes <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 text-center">
+                        <a href="https://www.linkedin.com/posts/meiryleneavelino_daryus-idesp-continuidadedenegocios-activity-7042587379148177408-d-E1?utm_source=share&utm_medium=member_desktop" target="_blank" style="text-decoration: none;">
+                            <div class="profile-highlight mx-auto">
+                                <img class="img-fluid" src="assets/img/darys.png" alt="Reconhecimento Woman That Build" style="border-radius: 0.5rem; border: 3px solid #8a2be2;">
+                            </div>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center justify-content-center">
+                    
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h2 class="display-6 fw-bolder mb-3"><span class="text-gradient d-inline"></span></h2>
+                        <p class="text-light-subtle">
+                            Tive um reconhecimento muito especial! Durante uma live na Globo, tive a honra de apresentar ao lado de Alexandre Handerson, repórter da emissora.
+                        </p>
+                        <a class="btn btn-lg fw-bolder" 
+                        href="https://www.instagram.com/reel/DBzRsIFSdiT/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" 
+                        target="_blank" 
+                        style="background: var(--accent-gradient); border: none; color: #fff;">
+                        Ver Mais Detalhes <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 text-center">
+                        <a href="https://www.instagram.com/reel/DBzRsIFSdiT/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" style="text-decoration: none;">
+                            <div class="profile-highlight mx-auto">
+                                <img class="img-fluid" src="assets/img/al.png" alt="Reconhecimento Globo" style="border-radius: 0.5rem; border: 3px solid #8a2be2;">
+                            </div>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center justify-content-center">
+                    
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h2 class="display-6 fw-bolder mb-3"><span class="text-gradient d-inline"></span></h2>
+                        <p class="text-light-subtle">
+                            Criadora do Evento MACT. Evento de democratização do acesso a conteúdos de segurança da informação para a sociedade
+                        </p>
+                        <a class="btn btn-lg fw-bolder" 
+                        href="https://www.linkedin.com/posts/meiryleneavelino_e-assim-aconteceu-a-primeira-edi%C3%A7%C3%A3o-do-ma-activity-7063211860673671168-yoIp?utm_source=share&utm_medium=member_desktop" 
+                        target="_blank" 
+                        style="background: var(--accent-gradient); border: none; color: #fff;">
+                        Ver Mais Detalhes <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 text-center">
+                        <a href="https://www.linkedin.com/posts/meiryleneavelino_e-assim-aconteceu-a-primeira-edi%C3%A7%C3%A3o-do-ma-activity-7063211860673671168-yoIp?utm_source=share&utm_medium=member_desktop" target="_blank" style="text-decoration: none;">
+                            <div class="profile-highlight mx-auto">
+                                <img class="img-fluid" src="assets/img/mact.png" alt="Criadora do Evento MACT" style="border-radius: 0.5rem; border: 3px solid #8a2be2;">
+                            </div>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+
+             <div class="container px-5">
+                <div class="row gx-5 align-items-center justify-content-center">
+                    
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h2 class="display-6 fw-bolder mb-3"><span class="text-gradient d-inline"></span></h2>
+                        <p class="text-light-subtle">
+                            Idealizadora e Cocriadora da GloboSecWeek: Primeiro desafio sobre
+                                                Segurança da Informação na Globo
+                        </p>
+                        <a class="btn btn-lg fw-bolder" 
+                        href="https://youtu.be/3vQEInRhYDU" 
+                        target="_blank" 
+                        style="background: var(--accent-gradient); border: none; color: #fff;">
+                        Ver Mais Detalhes <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 text-center">
+                        <a href="https://www.instagram.com/reel/CcygEO3pIRE/?utm_source=ig_web_copy_link" target="_blank" style="text-decoration: none;">
+                            <div class="profile-highlight mx-auto">
+                                <img class="img-fluid" src="assets/img/gsw.png" alt="Criadora do Evento MACT" style="border-radius: 0.5rem; border: 3px solid #8a2be2;">
+                            </div>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+
+
+        </section>
+
+           <section class="py-5">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-11 col-xl-9 col-xxl-8">
+                <div class="text-center mb-5">
+                    <h2 class="display-6 fw-bolder text-gradient">Palestras Eventos e Cursos Ministrados</h2>
+                </div>
             </div>
         </div>
-    </div>
+        
+        <div class="row gx-5 justify-content-center">
+            
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/TDC2025.png" alt="Logo TDC 2025 São Paulo" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
 
-
-
-                        <!-- Experience Section-->
-                        <section>
-                            <!-- Experience Card -->
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-center gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-primary fw-bolder mb-2">2021 - 2023</div>
-                                                <div class="small fw-bolder">Analista de Segurança da Informação Pleno</div>
-                                                <div class="small text-muted">Globo</div>
-                                                <div class="small text-muted">Rio de Janeiro, Brasil</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8"><div>
-                                            <ul>
-                                                <li>Instrutora da disciplina de Segurança da Informação no curso de Novas Mídias na parceria do programa Globo Universidade com instituições de ensino superior como UFRJ, Instituto Mauá de Tecnologia e Universidade Mackenzie.</li>
-                                                <li>Construção de visões de segurança da informação em soluções de tecnologia que suportem as necessidades e transformações de negócios nos projetos estruturantes da empresa.</li>
-                                                <li>Responsável pela criação da GloboSec Week - Um evento de Segurança da Informação onde universitários podem passar um tempo dentro dos ambientes da Globo aprendendo sobre Segurança da Informação com o nosso time de Segurança.</li>
-                                                <li>Integrante do comitê de cultura IES e E&T - Coletivo de funcionários que atuam para viabilizar a nova cultura interna da empresa.</li>
-                                                <li>Integrante do comitê de marca empregadora</li>
-                                                <li>Elaboração e participação em eventos com o intuito de divulgar a marca Globo.</li>
-                                                <li>Responsável em desenvolver e manter um repositório de conteúdos de boas práticas e recomendações de segurança para a área de tecnologia e para os novos funcionários integrantes do time de Segurança.</li>
-                                                <li>Responsável em atuar na migração, configuração e desenho de arquitetura de soluções de PAM da empresa. Além de estabelecer melhores práticas de segurança de gestão de acessos privilegiados e password manager.</li>
-                                                <li>Responsável em estabelecer melhores práticas em políticas de Grupos de domínio (GPO) e hardening de Sistemas operacionais</li>
-                                                <li>Acompanhar, documentar indicadores e priorizar correções dentro do programa de gestão de vulnerabilidades</li>
-                                                <li>Apoiar nas cobranças das áreas envolvidas nas correções de vulnerabilidades de forma organizada</li>
-                                                <li>Trust Advisor de Segurança em projetos de aplicações e acompanhamento durante o ciclo de vida do projeto</li>
-                                                <li>Manter indicadores e métricas para os níveis operacional, tático e estratégico</li>
-                                                <li>Executar projetos desenvolvidos pela área.</li>
-                                                <li>Participação e formulação de treinamentos internos sobre assuntos correlatos a tecnologia</li>
-                                                <li>Além das atividades desenvolvidas anteriormente</li>
-                                                
-                                                
-                                              </ul>
-                                        
-                                        </div></div>
-                                    </div>
-                                </div>
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Setembro 2025</div>
+                                <h5 class="fw-bolder text-light mb-1">TDC São Paulo 2025</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">
+                                    Tema da Palestra: Secure by Intelligence: Protegendo Software na Era dos Modelos</p>
+                                <a href="https://www.instagram.com/p/DOzZP3XDKVS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
                             </div>
-
-                            <!-- Experience Card -->
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-center gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-primary fw-bolder mb-2">2018 - 2021</div>
-                                                <div class="small fw-bolder">Analista de Segurança da Informação Júnior</div>
-                                                <div class="small text-muted">Globo</div>
-                                                <div class="small text-muted">Rio de Janeiro, Brasil</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8"><div>
-                                            <ul>
-                                                <li>Responsável pela Gestão de Acessos Privilegiados da empresa</li>
-                                                <li>Responsável pela arquitetura, planejamento e implantação de uma solução de PAM para os funcionários que possuem privilégios elevados no ambiente</li>
-                                                <li>Organização da estrutura de security groups no Active Directory</li>
-                                                <li>Responsável pela formulação de GPOS para os ativos críticos</li>
-                                                <li>Instrutora da Disciplina de Segurança da Informação na Academia de Tecnologia (Um programa de capacitação e treinamento interno na empresa)</li>
-                                              
-                                                <li>Além das atividades desenvolvidas anteriormente</li>
-                                                
-                                                
-                                              </ul>
-                                        
-                                        </div></div>
-                                    </div>
-                                </div>
-                            </div>
-                           
-                            <!-- Experience Card -->
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-center gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-primary fw-bolder mb-2">2017 - 2018</div>
-                                                <div class="small fw-bolder">Assistente Técnico de Segurança da Informação</div>
-                                                <div class="small text-muted">Globo</div>
-                                                <div class="small text-muted">Rio de Janeiro, Brasil</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8"><div>
-                                            <ul>
-                                                <li>Provisão de Suporte no time de Operações (SNOC-N1 e SNOC-N2)</li>
-                                                <li>Manipulação de Equipamentos de Segurança: Proxys, Anti-Spam, Firewalls.</li>
-                                                <li>Responsável pelo planejamento e execução de upgrade de firmware de firewalls</li>
-                                                <li>Preparação e condução de apresentações de análises críticas de projetos de Segurança da Informação</li>
-                                                <li>Acompanhamento de projetos estruturantes de Tecnologia e Segurança da Informação</li>
-                                                <li>Mantenedora de um canal de comunicação de processos para o time interno</li>
-                                                <li>Elaboração de desenhos de arquitetura de equipamentos de redes</li>
-                                                <li>Auxilio em demandas do time de CSIRT</li>
-                                                <li>Além das atividades desenvolvidas anteriormente</li>
-                                                
-                                                
-                                              </ul>
-                                        
-                                        </div></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Experience Card -->
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-center gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-primary fw-bolder mb-2">2017 - 2017</div>
-                                                <div class="small fw-bolder">Estagiário de Segurança da Informação</div>
-                                                <div class="small text-muted">Globo</div>
-                                                <div class="small text-muted">Rio de Janeiro, Brasil</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8"><div>
-
-                                            <ul>
-                                                <li>Gestão de Vulnerabilidades</li>
-                                                <li>Planejar realização de scans de vulnerabilidades nos ativos da empresa</li>
-                                                <li>Executar e organizar os resultados dos Scans</li>
-                                                <li>Gerenciar os times nas tratativas das vulnerabilidades encontradas</li>
-                                                <li>Criação de GPOs e Baselines</li>
-                                                <li>Elaborar arquivos .inf de acordo com as particularidades de cada sistema/ambiente da empresa</li>
-                                                <li>Organização do Active Directory (políticas e objetos) para receber os arquivos homologados</li>
-                                                <li>Criação e documentação de procedimentos internos</li>
-                                                <li>Gestão de um ambiente centralizador de informações para os times operacionais</li>
-                                                <li>Gestão de acessos</li>
-                                                <li>Organização e criação de grupos de acesso seguindo o conceito de privilégio mínimo</li>
-                                                <li>Planejamento e execução de configurações referentes a autenticação de usuários (Duplo fator físico de autenticação)</li>
-                                              </ul>
-                                   
-                                            
-                                            </div></div>
-                                    </div>
-                                </div>
-
-
-
-                            </div>
-                        </section>
-                        <!-- Education Section-->
-                        <section>
-                            <h2 class="text-secondary fw-bolder mb-4">Educação</h2>
-                            <!-- Education Card -->
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-center gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-secondary fw-bolder mb-2">2022 - 2023</div>
-                                                <div class="mb-2">
-                                                    <div class="small fw-bolder">Universidade Federal Fluminense</div>
-                                                    <div class="small text-muted">Brasil, Niteói</div>
-                                                </div>
-                                                <div class="fst-italic">
-                                                    <div class="small text-muted">Pós-graduação Lato Sensu - MBA</div>
-                                                    <div class="small text-muted">Administração estratégica de negócios</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8"><div>Competências: Analise financeira de empresas | Comunicação nas empresas | Contabilidade gerencial | Gestao de marketing e marketing digital | Analise e controles internos | Compliance e governanca corporativa | Gestão de projetos | Gestao estrategica de negocios | Mercado financeiro | Gestão de RH </div></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Education Card -->
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-center gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-secondary fw-bolder mb-2">2018 - 2021</div>
-                                                <div class="mb-2">
-                                                    <div class="small fw-bolder">Universidade Federal Fluminense</div>
-                                                    <div class="small text-muted">Brasil, Niteói</div>
-                                                </div>
-                                                <div class="fst-italic">
-                                                    <div class="small text-muted">Mestrado</div>
-                                                    <div class="small text-muted">Ciência da Computação</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8"><div>A Blockchain está sendo amplamente estudada e possui alguns benefícios, tais como: garantia de autenticidade, integridade, imutabilidade, armazenamento distribuído, etc. Um dos usos é adquirir possíveis evidências valiosas de crimes digitais com valor legal indiscutível. O trabalho desenvolvido durante o mestrado nos permite garantir a autenticidade e integridade, independentemente de o conteúdo da web publicado ser classificado como estático ou dinâmico, possibilitando evidências confiáveis e indiscutíveis.
-                                            
-                                            </div></div>
-                                    </div>
-                                </div>
-                            </div>
-                             <!-- Education Card -->
-                             <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-center gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-secondary fw-bolder mb-2">2013 - 2017</div>
-                                                <div class="mb-2">
-                                                    <div class="small fw-bolder">Universidade Federal Fluminense</div>
-                                                    <div class="small text-muted">Brasil, Niteói</div>
-                                                </div>
-                                                <div class="fst-italic">
-                                                    <div class="small text-muted">Gradução</div>
-                                                    <div class="small text-muted">Ciência da Computação</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8"><div>Destaques: Co-criadora e Coordenadora de eventos voluntária do projeto Include Meninas.UFF - Um projeto de diversidade e inclusão de mulheres nas áreas STEM
-                                            
-                                            </div></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- Divider-->
-                        <div class="pb-5"></div>
-                        <!-- Skills Section-->
-                        <section>
-                            <!-- Skillset Card-->
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <!-- Professional skills list-->
-                                    <div class="mb-5">
-                                        <div class="d-flex align-items-center mb-4">
-                                            <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-tools"></i></div>
-                                            <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Habilidades Profissionais</span></h3>
-                                        </div>
-
-                                        <div class="row row-cols-1 row-cols-md-3 mb-4">
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">SEO/SEM Marketing</div></div>
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Desenvolvimento Web</div></div>
-                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Segurança da Informação</div></div>
-                                        </div>
-
-                                        <div class="row row-cols-1 row-cols-md-3">
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Network Security</div></div>
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Firewalls</div></div>
-                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Sistemas Operacionais</div></div>
-                                        </div><br>
-
-                                        <div class="row row-cols-1 row-cols-md-3">
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Cloud</div></div>
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Gestão de Vulnerabilidades</div></div>
-                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Soluções de PAM</div></div>
-                                        </div><br>
-
-                                        <div class="row row-cols-1 row-cols-md-3">
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Arquitetura de Redes</div></div>
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Segurança em Banco de Dadoss</div></div>
-                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">GPO e Baselines</div></div>
-                                        </div>
-                                    </div>
-                                    <!-- Languages list-->
-                                    <div class="mb-0">
-                                        <div class="d-flex align-items-center mb-4">
-                                            <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-code-slash"></i></div>
-                                            <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Linguagens</span></h3>
-                                        </div>
-                                        <div class="row row-cols-1 row-cols-md-3 mb-4">
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">HTML</div></div>
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">CSS</div></div>
-                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">JavaScript</div></div>
-                                        </div>
-                                        <div class="row row-cols-1 row-cols-md-3">
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Python</div></div>
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Ruby</div></div>
-                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Node.js</div></div>
-                                        </div><br>
-                                        <div class="row row-cols-1 row-cols-md-3">
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">React JS</div></div>
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">C++</div></div>
-                                            <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Java</div></div>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
+                        </div>
                     </div>
                 </div>
             </div>
-        </main>
-        <!-- Footer-->
-        <footer class="bg-white py-4 mt-auto">
+            
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/mts2025.png" alt="Logo Mind The Sec 2025" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Setembro 2025</div>
+                                <h5 class="fw-bolder text-light mb-1">Mind The Sec 2025</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Palestra sobre como proteger modelos de Inteligência Artificial.</p>
+                                <a href="https://www.instagram.com/p/DOw5WjXjEEG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/wie.png" alt="Logo WIE" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Julho 2025</div>
+                                <h5 class="fw-bolder text-light mb-1">Women in Engineering </h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Recebi o convite para falar sobre carreiras em Tecnologia</p>
+                                <a href="https://www.instagram.com/p/DL-GNTbsEH8/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/include.png" alt="Logo Include Meninas" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Maio 2025</div>
+                                <h5 class="fw-bolder text-light mb-1">Include Meninas.UFF </h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Recebi o convite para participar de um painel na UFF sobre ser mulher em Tecnologia. </p>
+                                <a href="https://www.instagram.com/p/DJ1ZwHNCm24/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/seginfo.png" alt="Logo SegInfo" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Maio 2025</div>
+                                <h5 class="fw-bolder text-light mb-1">Segurança da Informação na UFF </h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Recebi o convite para falar um pouco da carreira em Segurança da Informação em duas turmas de SI na UFF </p>
+                                <a href="https://www.instagram.com/p/DJWdxXxRVxM/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/despertar.png" alt="Logo CyberSecurityGirls" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Abril 2025</div>
+                                <h5 class="fw-bolder text-light mb-1">CyberSecurity Girls </h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Recebi o convite para falar sobre carreiras de Segurança sendo mulher. </p>
+                                <a href="https://www.instagram.com/p/DIAHT6MPV0U/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/uff.png" alt="Logo Semana Academica UFF" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Outubro 2024</div>
+                                <h5 class="fw-bolder text-light mb-1">Semana Acadêmica UFF</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Tema da Palestra: Uma trajetória em Carreiras Tecnológicas</p>
+                                <a href="https://www.instagram.com/p/DBjEsLoBm71/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/cloud.png" alt="Logo Meetup Cloud Girls in Rio" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Setembro 2024</div>
+                                <h5 class="fw-bolder text-light mb-1">Meetup Cloud Girls in Rio</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Temada Palestra: O despertar para uma trajeória de Sucesso</p>
+                                <a href="https://www.instagram.com/p/DAifMgaP1Pz/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+              <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/csirt.png" alt="Logo Workshop Tecnológico" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Setembro 2024</div>
+                                <h5 class="fw-bolder text-light mb-1">Workshop Tecnológico em Criciúma</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Workshop sobre como criar um CSIRT</p>
+                                <a href="https://unisatc.com.br/cybersatc-reune-mais-de-15-mil-pessoas-no-maior-evento-de-ciberseguranca-de-santa-catarina/" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/cybers.png" alt="Palestra no CyberSatc" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Setembro 2024</div>
+                                <h5 class="fw-bolder text-light mb-1">Palestra no CyberSatc</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Tema: O Golpe está ai, só cai quem não sabe que é golpe</p>
+                                <a href="https://unisatc.com.br/cybersatc-reune-especialistas-para-discutir-tendencias-em-ciberseguranca/" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/mts24.png" alt="Mestre de Cerimônia no MindTheSec 2024" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Setembro 2024</div>
+                                <h5 class="fw-bolder text-light mb-1">Mestre de Cerimônia no MindTheSec 2024</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Mestre de Cerimônia</p>
+                                <a href="https://www.mindthesec.com.br/mts24-palestrantes/meirylene-avelino" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/mac.png" alt="Palestra na Universidade Mackenzie São Paulo" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Maio 2024</div>
+                                <h5 class="fw-bolder text-light mb-1">Palestra na Universidade Mackenzie São Paulo</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Tema da Palestra: O que é Segurança da Informação?</p>
+                                <a href="https://www.instagram.com/p/C6bTpUWLJ09/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/ufrj2.png" alt="Palestra na UFRJ" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Maio 2024</div>
+                                <h5 class="fw-bolder text-light mb-1">Palestra na UFRJ</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Tema da Palestra: O que é Segurança da Informação?</p>
+                                <a href="https://www.instagram.com/p/C7WeL7CM6vc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/sec.png" alt="Palestrante no Secops Summit" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Marçø 2024</div>
+                                <h5 class="fw-bolder text-light mb-1">Palestrante no Secops Summit</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Tema da Palestra: O SOC não é só monitoração</p>
+                                <a href="https://www.secopssummit.com.br/uploads/SecOps%20Summit%20-%20Horarios%20por%20Dia_1.pdf" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/guia.png" alt="Conteúdista e Palestrante no canal Guia Anônima" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">2024</div>
+                                <h5 class="fw-bolder text-light mb-1">Conteúdista e Palestrante no canal Guia Anônima</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Conteúdista e participação no evento: Papo de Hacker</p>
+                                <a href="https://www.linkedin.com/posts/meiryleneavelino_recebi-um-convite-do-afonso-da-silva-espindola-activity-7111062254946562048-bzOs?utm_source=share&utm_medium=member_desktop" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/mtd23.png" alt="Palestrante e Mestre de Cerimônia no MindTheSec 2023" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Setembro 2023</div>
+                                <h5 class="fw-bolder text-light mb-1">Palestrante e Mestre de Cerimônia no MindTheSec 2023</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Tema da Palestra: A responsabilidade do profissional de Segurança da Informação junto ao ESG</p>
+                                <a href="https://www.linkedin.com/posts/meiryleneavelino_mindthesec-segurancadainformacao-cybersecurity-activity-7108447420887236608-JqBO?utm_source=share&utm_medium=member_desktop" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+               <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/zab.png" alt="Palestrante no ZabbixConferenceLatam2023 " style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Junho 2023</div>
+                                <h5 class="fw-bolder text-light mb-1">Palestrante no ZabbixConferenceLatam2023</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Representando a Globo no maior evento sobre monitoramento e Zabbix da América Latina</p>
+                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7069318279483334656?utm_source=share&utm_medium=member_desktop" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/rod23.png" alt="Palestrante no RoadSec 2023 " style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Junho 2023</div>
+                                <h5 class="fw-bolder text-light mb-1">Palestrante no RoadSec 2023</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Tema da Palestra: É nudge ou engenharia social?</p>
+                                <a href="https://www.linkedin.com/posts/meiryleneavelino_roadsec-privacidade-activity-7039638530435727360-wvhU?utm_source=share&utm_medium=member_desktop" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/live.png" alt="Podcast no canal TIDepressão " style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Junho 2023</div>
+                                <h5 class="fw-bolder text-light mb-1">Podcast no canal TIDepressão</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Tema do PodCast: Carreira em Seginfo</p>
+                                <a href="https://lnkd.in/ddPuiY_f" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/live.png" alt="Live no canal TIDepressão " style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Junho 2023</div>
+                                <h5 class="fw-bolder text-light mb-1">Live no canal TIDepressão</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Tema da Live: Carreira em Seginfo</p>
+                                <a href="https://lnkd.in/dpjNDmpe" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/tdc2.png" alt="Palestrante no TDC Future 2022" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Junho 2023</div>
+                                <h5 class="fw-bolder text-light mb-1">Palestrante no TDC Future 2022</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Palestrante e Painelista
+                                                nas trilhas de CyberSecurity
+                                                e Data Science</p>
+                                <a href="https://thedevconf.com/palestrante/meirylene-avelino" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/mts.png" alt="Palestrante no MindTheSec 2022" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Junho 2023</div>
+                                <h5 class="fw-bolder text-light mb-1">Palestrante no MindTheSec 2022</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Tema da Palestra: Gestão de Acessos Privilegiados:
+                                                Da Implantação a quebras de paradigmas</p>
+                                <a href="https://www.linkedin.com/posts/meiryleneavelino_mindthesec-vempraglobo-ciberseguran%C3%A7a-activity-6976007732097110016-myec/" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/volun.png" alt="Ações voluntárias de ensino" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Junho 2023</div>
+                                <h5 class="fw-bolder text-light mb-1">Ações voluntárias de ensino</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Palestras em escolas e universidades sobre temas correlatos à tecnologia e
+                                                Segurança da Informação</p>
+                                <a href="https://www.linkedin.com/posts/meiryleneavelino_ciberseguranaexa-tecnologia-activity-6976604801249763328-T9tK?utm_source=share&utm_medium=member_desktop" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/roadsec.png" alt="Palestrante no RoadSec 2022" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Junho 2023</div>
+                                <h5 class="fw-bolder text-light mb-1">Palestrante no RoadSec 2022</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Tema da Palestra
+                                                BlockProof: Um Framework
+                                                para garantia de autenticidade
+                                                de conteúdos web</p>
+                                <a href="https://www.roadsec.com.br/palestrantes/meiryleneavelino" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/mentora.png" alt="Mentora do Autismo Tech" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Junho 2023</div>
+                                <h5 class="fw-bolder text-light mb-1">Mentora do Autismo Tech</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Programa de Mentoria em Tecnologia da Atip</p>
+                                <a href="https://www.youtube.com/channel/UCk9AmyEVlHZ7lkvtpgMEvJg" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/tdc.png" alt="Palestrante TDC 2022 Innovation" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Junho 2023</div>
+                                <h5 class="fw-bolder text-light mb-1">Palestrante TDC 2022 Innovation</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Tema da Palestra: A Busca Feminina
+                                                de uma Trajetória para o Sucesso</p>
+                                <a href="https://thedevconf.com/tdc/2022/innovation/trilha-diversidade-e-acessibilidade" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/ufrj.png" alt="Palestrante na UFRJ" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Junho 2023</div>
+                                <h5 class="fw-bolder text-light mb-1">Palestrante na UFRJ</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Tema da Palestra:A Segurança da Informação é responsabilidade de todos!</p>
+                                <a href="https://www.linkedin.com/posts/caccufrrj_computingtogether-semanaacademica-ufrrj-activity-6861745433262268416-PRk2?utm_source=share&utm_medium=member_desktop" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/maria.png" alt="Palestrante no Programaria Sprint" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Junho 2023</div>
+                                <h5 class="fw-bolder text-light mb-1">Palestrante no Programaria Sprint</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Tema da Palestra:Como a gestão de credenciais privilegiadas ajuda a proteger a Globo?</p>
+                                <a href="https://www.youtube.com/watch?v=VPC2rEsFYfA" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/minicurso.png" alt="MINICURSO NA UFF" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Junho 2023</div>
+                                <h5 class="fw-bolder text-light mb-1">MINICURSO NA UFF</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Minicurso sobre Segurança da Informação para o projeto Include Meninas.Uff</p>
+                                <a href="https://www.instagram.com/tv/CTFkv5egjwu/?utm_source=ig_web_copy_link" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="col-lg-6 mb-4">
+                <div class="card h-100 shadow-lg border-0" style="background-color: var(--card-bg);">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            
+                            <img class="me-3" src="assets/img/rdo.png" alt=PALESTRANTE NA SEMANA DE COMPUTAÇÃO DA UFF RIO DAS OSTRAS" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;">
+
+                            <div>
+                                <div class="badge mb-2" style="background: var(--accent-gradient); color: #fff;">Junho 2023</div>
+                                <h5 class="fw-bolder text-light mb-1">PALESTRANTE NA SEMANA DE COMPUTAÇÃO DA UFF RIO DAS OSTRAS</h5>
+                                <p class="text-light-subtle mb-1" style="font-size: 0.9rem;">Tema da Palestra
+                                                A Segurança da Informação é uma responsabilidade de todos!!</p>
+                                <a href="https://www.instagram.com/p/CkRL1oypcKS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="small fw-bolder" style="color: #8a2be2 !important;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+
+
+        </div>
+    </div>
+</section>
+
+            <section class="py-5" style="background-color: var(--card-bg);">
+                <div class="container px-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-11 col-xl-9 col-xxl-8">
+                            <div class="text-center mb-5">
+                                <h2 class="display-6 fw-bolder text-gradient">Histórico Profissional</h2>
+                            </div>
+
+                            <div class="card shadow-lg border-0 rounded-4 mb-5" style="background-color: var(--dark-bg);">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="p-4 rounded-4" style="background-color: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1);">
+                                                <div class="fw-bolder mb-2" style="color: #007bff !important;">2017 — Atual</div>
+                                                <div class="small fw-bolder text-light">Analista Sênior de Segurança da Informação</div>
+                                                <div class="small text-light-subtle">Globo</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="text-light">Profissional de Segurança da Informação Sênior, especializado(a) em Gestão de Vulnerabilidades de ciclo completo, Privileged Access Management (PAM) e hardening de sistemas. Liderou a arquitetura e implementação de soluções PAM e políticas de segurança (GPOs/Baselines) no Active Directory. Possui experiência em Operações de Segurança e na gestão de projetos estratégicos. Forte atuação no desenvolvimento da cultura de segurança (DevSecOps), como Instrutor(a) da Academia de Tecnologia interna e criador(a) de eventos de segurança.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card shadow-lg border-0 rounded-4 mb-5" style="background-color: var(--dark-bg);">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                             <div class="p-4 rounded-4" style="background-color: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1);">
+                                                <div class="fw-bolder mb-2" style="color: #007bff !important;">2024-2025</div>
+                                                <div class="small fw-bolder text-light">Professora Substituta</div>
+                                                <div class="small text-light-subtle">UFF - Universidade Federal Fluminense</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="text-light">Responsável por ministrar disciplinas de Programação de Computadores e Segurança da Informação, contribuindo ativamente para a formação acadêmica de novos profissionais da área.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card shadow-lg border-0 rounded-4 mb-5" style="background-color: var(--dark-bg);">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                             <div class="p-4 rounded-4" style="background-color: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1);">
+                                                <div class="fw-bolder mb-2" style="color: #007bff !important;">2023-Atual</div>
+                                                <div class="small fw-bolder text-light">Fundadora da MACyberTech</div>
+                                                <div class="small text-light-subtle">MACyberTech</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="text-light">Empresa especializada em treinamentos corporativos sobre assuntos voltados para tecnologia e segurança da informação, mentoria de carreiras cyberTech, consultoria e desenvolvimento de softwares</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            
+            </main>
+        <footer class="footer py-4 mt-auto">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div class="col-auto"><div class="small m-0">Copyright &copy; MACT 2023</div></div>
-                   
+                    <div class="col-auto social-icons-footer">
+                        <a class="text-gradient" href="https://www.linkedin.com/in/meiryleneavelino/"><i class="bi bi-linkedin"></i></a>
+                
+                        <a class="text-gradient" href="https://www.instagram.com/meiryleneavelinocybertech/"><i class="bi bi-instagram"></i></a>
+                
+                        <a class="text-gradient" href="https://linktr.ee/meiryleneavelinocybertech"><i class="bi bi-link"></i></a>
+                        </div>
                 </div>
             </div>
         </footer>
-        <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
 </html>

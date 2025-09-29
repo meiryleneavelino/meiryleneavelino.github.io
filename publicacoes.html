@@ -1,242 +1,438 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content />
-        <meta name="author" content />
-        <title>Meirylene Avelino</title>
-        <!-- Favicon-->
+        <meta name="description" content="Portfólio profissional de Meirylene Avelino, doutoranda em Ciência da Computação, DevSecOps e especialista em Segurança da Informação." />
+        <meta name="author" content="MaCyberTech" />
+        <title>Experiência - MaCyberTech</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Custom Google font-->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <style>
-            /* Custom styling to make links appear more visible */
-            .nav-link {
-                text-decoration: none; /* Remove underline */
-                color: #007bff; /* Blue color for links */
+            /* ESTILOS COPIADOS DIRETAMENTE DA INDEX.HTML */
+            :root {
+                --primary-color: #007bff;
+                --secondary-color: #6c757d;
+                --dark-bg: #1a1a2e;
+                --card-bg: #2a2a4a;
+                --text-light: #f0f0f0;
+                --accent-gradient: linear-gradient(45deg, #8a2be2, #007bff);
+                --neon-effect: 0 0 8px rgba(138, 43, 226, 0.7), 0 0 15px rgba(0, 123, 255, 0.7);
             }
+
+            body {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                background-color: var(--dark-bg);
+                color: var(--text-light);
+            }
+
+            .navbar {
+                background-color: var(--dark-bg) !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .navbar-brand .fw-bolder {
+                background: var(--accent-gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 1.5rem;
+                letter-spacing: 0.5px;
+            }
+
+            .nav-link {
+                color: var(--text-light) !important;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
+
             .nav-link:hover {
-                color: #0056b3; /* Darker blue when hovered */
-                text-decoration: underline; /* Underline on hover */
+                color: #8a2be2 !important;
+                text-shadow: var(--neon-effect);
+            }
+            .nav-link.active {
+                color: #007bff !important;
+                text-shadow: var(--neon-effect);
+            }
+
+            .header-content {
+                display: flex;
+                align-items: center;
+                gap: 3rem;
+            }
+
+            .header-text {
+                flex: 1;
+            }
+
+            .header-picture {
+                flex: 0 0 500px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+            }
+
+            .profile {
+                width: 400px;
+                height: 400px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                background: var(--accent-gradient);
+                padding: 5px;
+
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                border-radius: 0;
+                animation: rotateBorder 8s linear infinite;
+            }
+
+            .profile-img {
+             width: 100%;
+             height: 100%;
+             object-fit: contain;
+             display: block;
+             position: relative;
+             z-index: 1;
+             object-position: center bottom;
+
+            transform: none;
+            }
+
+            @keyframes rotateBorder {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+
+            .text-gradient {
+                background: var(--accent-gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            h1.display-5 {
+                font-size: 3.5rem;
+                font-weight: 700;
+                line-height: 1.2;
+            }
+
+            .lead.text-muted {
+                font-size: 1.15rem;
+                line-height: 1.8;
+                color: #ccc !important;
+            }
+
+            .social-icons a {
+                color: var(--text-light);
+                font-size: 2.5rem;
+                margin: 0 0.75rem;
+                transition: color 0.3s ease, transform 0.3s ease;
+            }
+
+            .social-icons a:hover {
+                color: #8a2be2;
+                transform: translateY(-5px);
+                text-shadow: var(--neon-effect);
+            }
+
+            /* Estilos Específicos para Experiência/Timeline */
+            .profile-highlight {
+                width: 250px;
+                height: 250px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+            }
+            .profile-highlight img {
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+            .profile-highlight a:hover img {
+                transform: scale(1.05);
+            }
+
+            /* Melhoria dos cards da Timeline */
+            .card-body a.small {
+                color: #8a2be2 !important;
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+            .card-body a.small:hover {
+                text-decoration: underline;
+                color: #007bff !important;
+            }
+
+
+            /* Removendo os dots SVGs antigos */
+            .profile .dots-1, .profile .dots-2, .profile .dots-3, .profile .dots-4 {
+                display: none;
+            }
+
+            /* Efeitos de gradiente para texto principal */
+            .header-text h1 .text-gradient {
+                font-size: 4.5rem;
+            }
+
+            /* O resto dos estilos da index (action-card, quote-section, footer) foram mantidos no final da seção <style> para consistência */
+            .action-card {
+                display: block;
+                padding: 2rem;
+                border-radius: 0.75rem;
+                background-color: var(--card-bg);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                height: 100%;
+                text-align: center;
+            }
+
+            .action-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), var(--neon-effect);
+            }
+
+            .action-card .h4 {
+                color: var(--text-light) !important;
+            }
+
+            .action-card p {
+                color: #a0a0a0 !important;
+            }
+
+            .feature {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                height: 3.5rem;
+                width: 3.5rem;
+                font-size: 1.75rem;
+                margin-bottom: 1.5rem;
+            }
+            .bg-gradient-primary-to-secondary {
+                background: linear-gradient(135deg, #8a2be2 0%, #007bff 100%) !important;
+            }
+
+            .quote-section {
+                background: var(--card-bg);
+                border-radius: 15px;
+                padding: 3rem;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .quote-section h6 {
+                color: var(--text-light);
+                font-style: italic;
+                font-size: 1.5rem;
+                line-height: 1.6;
+            }
+            .quote-section h6 span {
+                font-style: normal;
+                display: block;
+                margin-top: 1rem;
+                font-size: 1.2rem;
+                color: #bbb;
+            }
+
+            .footer {
+                background-color: var(--dark-bg) !important;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                color: var(--text-light);
+            }
+            .footer .small {
+                color: #aaa;
+            }
+            .footer .social-icons-footer a {
+                color: #aaa;
+                font-size: 1.5rem;
+                margin-left: 1rem;
+            }
+            .footer .social-icons-footer a:hover {
+                 color: #8a2be2;
+                 text-shadow: 0 0 5px rgba(138, 43, 226, 0.5);
+            }
+
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"></path></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)" /></svg>') no-repeat center center fixed;
+                background-size: cover;
+                opacity: 0.1;
+                z-index: -1;
             }
         </style>
     </head>
-    <body class="d-flex flex-column h-100 bg-light">
+    <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <nav class="navbar navbar-expand-lg navbar-dark py-3">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Meirylene Avelino</span></a>
+                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Meirylene Avelino CyberTech</span></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="docencia.html">Docência</a></li>
-                            <li class="nav-item"><a class="nav-link" href="mentoria.html">Mentoria</a></li>
-                            <li class="nav-item"><a class="nav-link" href="consultoriadev.html">Consultoria e Dev</a></li>
-                            <li class="nav-item"><a class="nav-link" href="experiencia.html">Experiência</a></li>
-                            <li class="nav-item"><a class="nav-link" href="pe.html">Palestras e Eventos</a></li>
+
+                            <li class="nav-item"><a class="nav-link" href="experiencia.html">Experiências Profissionais</a></li>
+                            <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços Ofertados</a></li>
                             <li class="nav-item"><a class="nav-link" href="publicacoes.html">Publicações</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contatos.html">Contatos</a></li>
-                            <li class="nav-item"><a class="nav-link" href="Eventos de Tecnologia 2025.html">Eventos de Tecnologia 2025</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
 
-
-            <!-- Projects Section-->
-            <section class="py-5">
-                <div class="container px-5 mb-5">
-                    <div class="text-center mb-5">
-                        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Publicações</span></h1>
+            <header class="py-5">
+                <div class="container px-5 pb-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-xxl-12">
+                            <div class="text-center my-5">
+                                <h1 class="display-5 fw-bolder mb-3">
+                                    <span class="text-gradient d-inline">Publicações</span>
+                                </h1>
+                                <p class="lead fw-light mb-4 text-light">Algumas publicações realizadas</p>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </header>
+
+            <section class="py-5" style="background-color: var(--card-bg);">
+                <div class="container px-5">
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-11 col-xl-9 col-xxl-8">
-
-                             <!-- Project Card 2-->
-                             <div class="card overflow-hidden shadow rounded-4 border-0">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">
-                                                Revista da Sociedade Brasileira de Computação-SBC</h2>
-                                            <p>48 · 6 de ago de 2022</p>
-                                            <a href="https://www.sbc.org.br/images/flippingbook/computacaobrasil/computa_48/pdf/CompBrasil_48.pdf">Exibir publicação</a><br>
-                                            
-                                           
-                                        </div>
-                                        
-                                    </div>
+                            <div class="text-center mb-5">
                                 </div>
-                            </div>
 
-                            <br>
-
-                              <!-- Project Card 2-->
-                              <div class="card overflow-hidden shadow rounded-4 border-0">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">
-                                                BlockProof: A Framework for Verifying Authenticity and Integrity of Web Content</h2>
-                                            <p>Sensors 2022 MDPI · 3 de fev de 2022</p>
-                                            <a href="https://www.mdpi.com/1482858">Exibir publicação</a><br>
-                                            
-                                           
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-
-                            <br>
-
-                            <!-- Project Card 2-->
-                            <div class="card overflow-hidden shadow rounded-4 border-0">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">
-                                                Garantindo autenticidade de conteudos Web com Blockchain</h2>
-                                            <p>Anais do IV Workshop em Blockchain: Teoria, Tecnologias e Aplicações (pp. 7-12). SBC. · 13 de ago de 2021</p>
-                                            <a href="https://sol.sbc.org.br/index.php/wblockchain/article/download/17124/16962">Exibir publicação</a><br>
-                                            
-                                           
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-
-                            <br>
-
-                                <!-- Project Card 2-->
-                                <div class="card overflow-hidden shadow rounded-4 border-0">
-                                    <div class="card-body p-0">
-                                        <div class="d-flex align-items-center">
-                                            <div class="p-5">
-                                                <h2 class="fw-bolder">
-                                                    Compartilhamento de Recursos em Sistemas Distribuídos para Sistemas de Controle de Versao</h2>
-                                                <p>Anais da V Escola Regional de Alto Desempenho do Rio de Janeiro (pp. 11-15). SBC. · 11 de out de 2019</p>
-                                                <a href="https://sol.sbc.org.br/index.php/eradrj/article/download/9534/9432">Exibir publicação</a><br>
-                                                
-                                               
+                            <div class="card shadow-lg border-0 rounded-4 mb-5" style="background-color: var(--dark-bg);">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                             <div class="p-4 rounded-4" style="background-color: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1);">
+                                                <div class="fw-bolder mb-2" style="color: #007bff !important;">2022</div>
+                                                <div class="small fw-bolder text-light">SBC </div>
+                                                <div class="small text-light-subtle">Ciência da Computação também é coisa de menina!</div>
                                             </div>
-                                            
                                         </div>
-                                    </div>
-                                </div>
-    
-                                <br>
-
-                            
-                              <!-- Project Card 2-->
-                              <div class="card overflow-hidden shadow rounded-4 border-0">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">
-                                                Factors Affecting Female Students Motivation Related to Enrollment and Retention in Information Technology Courses </h2>
-                                            <p>CLEI ELECTRONIC JOURNAL, VOLUME 22, NUMBER 2, PAPER #8 · 16 de ago de 2019</p>
-                                            <a href="https://pdfs.semanticscholar.org/a160/70ad52993f5be3ccc1dd706bd583a105ad85.pdf">Exibir publicação</a><br>
-                                            
-                                           
+                                        <div class="col-lg-8">
+                                            <a href="https://www.mdpi.com/1482858">Revista da Sociedade Brasileira de Computação-SBC</a><br>
                                         </div>
-                                        
                                     </div>
                                 </div>
                             </div>
 
-                            <br>
-
-                              <!-- Project Card 2-->
-                              <div class="card overflow-hidden shadow rounded-4 border-0">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">
-                                                Oficina de Re(design) da Interação do Whatsapp para alunas da rede municipal de Petrópolis</h2>
-                                            <p>11º WIT - Women in Information Technology · 8 de set de 2017</p>
-                                            <a href="https://sol.sbc.org.br/index.php/wit/article/download/3399/3361/">Exibir publicação</a><br>
-                                            
-                                           
+                            <div class="card shadow-lg border-0 rounded-4 mb-5" style="background-color: var(--dark-bg);">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                             <div class="p-4 rounded-4" style="background-color: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1);">
+                                                <div class="fw-bolder mb-2" style="color: #007bff !important;">2022</div>
+                                                <div class="small fw-bolder text-light">Sensors 2022 MDPI </div>
+                                                <div class="small text-light-subtle">BlockProof: A Framework for Verifying Authenticity and Integrity of Web Content</div>
+                                            </div>
                                         </div>
-                                        
+                                        <div class="col-lg-8">
+                                            <a href="https://www.mdpi.com/1482858">BlockProof: A Framework for Verifying Authenticity and Integrity of Web Content</a><br>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <br>
-
-                            <!-- Project Card 2-->
-                            <div class="card overflow-hidden shadow rounded-4 border-0">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Ciência da Computação também é coisa de menina!</h2>
-                                            <p>WIT - 10º Women in Information Technology · 13 de ago de 2016</p>
-                                            <a href="https://sol.sbc.org.br/index.php/wit/article/download/9691/9592">Exibir publicação</a><br>
-                                            
-                                           
+                            <div class="card shadow-lg border-0 rounded-4 mb-5" style="background-color: var(--dark-bg);">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                             <div class="p-4 rounded-4" style="background-color: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1);">
+                                                <div class="fw-bolder mb-2" style="color: #007bff !important;">2021</div>
+                                                <div class="small fw-bolder text-light">Anais do IV Workshop em Blockchain </div>
+                                                <div class="small text-light-subtle">Garantindo autenticidade de conteudos Web com Blockchain</div>
+                                            </div>
                                         </div>
-                                        
+                                        <div class="col-lg-8">
+                                            <a href="https://sol.sbc.org.br/index.php/wblockchain/article/download/17124/16962">Garantindo autenticidade de conteudos Web com Blockchain</a><br>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            
+                            <div class="card shadow-lg border-0 rounded-4 mb-5" style="background-color: var(--dark-bg);">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                             <div class="p-4 rounded-4" style="background-color: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1);">
+                                                <div class="fw-bolder mb-2" style="color: #007bff !important;">2019</div>
+                                                <div class="small fw-bolder text-light">Anais do IV Workshop em Blockchain </div>
+                                                <div class="small text-light-subtle">Compartilhamento de Recursos em Sistemas Distribuídos para Sistemas de Controle de Versao</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <a href="https://sol.sbc.org.br/index.php/eradrj/article/download/9534/9432">Anais da V Escola Regional de Alto Desempenho do Rio de Janeiro </a><br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                            
-                            
+                            <div class="card shadow-lg border-0 rounded-4 mb-5" style="background-color: var(--dark-bg);">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                             <div class="p-4 rounded-4" style="background-color: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1);">
+                                                <div class="fw-bolder mb-2" style="color: #007bff !important;">2019</div>
+                                                <div class="small fw-bolder text-light">CLEI ELECTRONIC JOURNAL</div>
+                                                <div class="small text-light-subtle">Factors Affecting Female Students Motivation Related to Enrollment and Retention in Information Technology Courses </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <a href="https://pdfs.semanticscholar.org/a160/70ad52993f5be3ccc1dd706bd583a105ad85.pdf">CLEI ELECTRONIC JOURNAL, VOLUME 22, NUMBER 2, PAPER #8 </a><br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div class="card shadow-lg border-0 rounded-4 mb-5" style="background-color: var(--dark-bg);">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                             <div class="p-4 rounded-4" style="background-color: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1);">
+                                                <div class="fw-bolder mb-2" style="color: #007bff !important;">2017</div>
+                                                <div class="small fw-bolder text-light">11º WIT</div>
+                                                <div class="small text-light-subtle">Oficina de Re(design) da Interação do Whatsapp para alunas da rede municipal de Petrópolis </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <a href="https://sol.sbc.org.br/index.php/wit/article/download/3399/3361">11º WIT - Women in Information Technology  </a><br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-
-
-
-
-
-
-
-
-
-
-                           
                         </div>
                     </div>
                 </div>
             </section>
 
-
-            <!-- Call to action section-->
-            <section class="py-5 bg-gradient-primary-to-secondary text-white">
-                <div class="container px-5 my-5">
-                    <div class="text-center">
-                        <h2 class="display-4 fw-bolder mb-4">Vamos construir algo juntos ?!</h2>
-                        <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="contatos.html">Entre em contato</a>
-                    </div>
-                </div>
-            </section>
         </main>
-        <!-- Footer-->
-        <footer class="bg-white py-4 mt-auto">
+        <footer class="footer py-4 mt-auto">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div class="col-auto"><div class="small m-0">Copyright &copy; MACT 2023</div></div>
-                    
+                    <div class="col-auto social-icons-footer">
+                        <a class="text-gradient" href="https://www.linkedin.com/in/meiryleneavelino/"><i class="bi bi-linkedin"></i></a>
+
+                        <a class="text-gradient" href="https://www.instagram.com/meiryleneavelinocybertech/"><i class="bi bi-instagram"></i></a>
+
+                        <a class="text-gradient" href="https://linktr.ee/meiryleneavelinocybertech"><i class="bi bi-link"></i></a>
+                        </div>
                 </div>
             </div>
         </footer>
-        <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
 </html>
